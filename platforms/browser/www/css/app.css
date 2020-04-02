@@ -1,0 +1,8 @@
+/* Your app custom styles here */
+
+*{margin: 0;
+	padding: 0;}
+img {height: 50vh;
+width: 80vh;}
+
+#pagina1 {background-color: lightblue;}

@@ -1,9 +1,8 @@
   
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
+
 var app = new Framework7({
-
-
     // App root element
     root: '#app',
     // App Name
@@ -12,60 +11,23 @@ var app = new Framework7({
     id: 'com.myapp.test',
     // Enable swipe panel
     panel: {
-      swipe: 'false',
+      swipe: 'left',
     },
-
-    
     // Add default routes
     routes: [
       {
-        path: '/foro/',
-        url: 'foro.html',
+        path: '/about/',
+        url: 'about.html',
       },
-       {
-        path: '/horarios/',
-        url: 'horarios.html',
-      },
-          {
-        path: '/forologin/',
-        url: 'forologin.html',
-      },
-
-      {
-        path: '/foroinicio/',
-        url: 'foroinicio.html',
-      },
-
-         {
-        path: '/fororegister/',
-        url: 'fororegister.html',
-      },
-
-
-
-
-
     ]
     // ... other parameters
-  } );
+  });
 
 var mainView = app.views.create('.view-main');
 
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-
-
-
-
-var swiper = new Swiper('.swiper-container', {
-  speed: 500,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  // ...
-});
 
     $$('.tocaBoton').on('click', fnTocaBoton);
 
@@ -77,8 +39,6 @@ $$(document).on('page:init', function (e) {
     console.log(e);
 })
 
-
-
 // Option 2. Using live 'page:init' event handlers for each page
 $$(document).on('page:init', '.page[data-name="about"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
@@ -87,9 +47,7 @@ $$(document).on('page:init', '.page[data-name="about"]', function (e) {
 })
 
 
-
 /** FUNCIONES PROPIAS **/
-
 function fnTocaBoton() {
     var mensaje = "";
 

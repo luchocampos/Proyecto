@@ -1,34 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-   
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar -->
-    <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS -->
-    <link rel="stylesheet" href="lib/framework7/css/framework7.bundle.min.css">
-    <!-- Path to icons -->
-    <link rel="stylesheet" href="css/icons.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/app.css">
-</head>
-
-<body>
-    <div id="app">
-        <!-- Statusbar overlay -->
-        <div class="statusbar"></div>
-    
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Initial Page, "data-name" contains page name -->
-            <div data-name="index" class="page">
+            <div data-name="fororegister" class="page">
 
                        <!-- Top Navbar -->
                 <div class="navbar">
@@ -53,8 +24,8 @@
 
 
                 <!-- Scrollable page content -->
-                <div class="page-content text-align-center">
-                       <h3> Iniciar sesión </h3>
+                <div class="page-content text-align-center"> </br>
+                       <h3> Registrarse </h3>
 
                     <div class="block">
 
@@ -76,6 +47,7 @@
 
                     </div>
 
+ <button class="col button button-large button-fill" > <img id="fb" src="img/iconfb.png">  Iniciar sesión con Facebook</button>
 
 <div id="form" class="list no-hairlines-md">
   <ul>
@@ -84,14 +56,39 @@
         <i class="icon demo-list-icon"></i>
       </div>
       <div class="item-inner">
-        <div class="item-title item-floating-label">Nombre</div>
+
+        <div class="item-title item-floating-label">Telefono o correo</div>
         <div class="item-input-wrap">
-          <input type="text" placeholder="Tu nombre">
+          <input type="text" placeholder="Tu correo o Telefono">
           <span class="input-clear-button"></span>
         </div>
       </div>
     </li>
     <li class="item-content item-input item-input-outline">
+      <div class="item-media">
+        <i class="icon demo-list-icon"></i>
+      </div>
+      <div class="item-inner">
+        <div class="item-title item-floating-label">Nombre completo</div>
+        <div class="item-input-wrap">
+          <input type="text" placeholder="Tu nombre completo">
+          <span class="input-clear-button"></span>
+        </div>
+      </div>
+    </li>
+        <li class="item-content item-input item-input-outline">
+      <div class="item-media">
+        <i class="icon demo-list-icon"></i>
+      </div>
+      <div class="item-inner">
+        <div class="item-title item-floating-label">Tu nombre de usuario</div>
+        <div class="item-input-wrap">
+          <input type="password" placeholder="Tu nombre de usuario">
+          <span class="input-clear-button"></span>
+        </div>
+      </div>
+    </li>
+        <li class="item-content item-input item-input-outline">
       <div class="item-media">
         <i class="icon demo-list-icon"></i>
       </div>
@@ -107,12 +104,13 @@
                 </div>
  <div class="row">
                       <div class="col-33"></div>
-                      <div class="col-33"><a href="/foroinicio/" class="button button-round button-fill">Ingresar</a></div>
+                      <div class="col-33"><a href="/foroinicio/" class="button button-round button-fill">Registrarte</a></div>
                       <div class="col-33"></div>
                     </div>
 
                     
 
+          ¿Tienes una cuenta? <a href="/forologin/">Inicia sesión</a>
 
 
 
@@ -120,33 +118,6 @@
 
 
             </div>
-            <!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        ...
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
 
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-</div>
         </div>
 
-
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-</body>
-
-</html>

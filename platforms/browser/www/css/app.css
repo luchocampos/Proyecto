@@ -23,7 +23,7 @@ width: 360px;}
 #pagina5{background-color: #EBE5E5;}
 #pagina6{background-color: #F4E9B7;}
 .swiper-container{ width: 100%;
-                  height: 93%; }
+                  height: 100%; }
 .panel {
   min-width: 100px;
   max-width: 90vw;
@@ -43,3 +43,10 @@ width: 360px;}
 #pageforo{margin-top: 30%}
 
 #form {margin-right: 20%}
+
+ #fb{margin-top:5px;
+    margin-right: 20px;
+    }
+#titulo {margin-left: 0px;
+        }
+

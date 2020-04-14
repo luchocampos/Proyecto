@@ -2,8 +2,9 @@
 <html>
 <head>
 
-    
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
+
+<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -19,9 +20,8 @@
     <link rel="stylesheet" href="css/icons.css">
     <!-- Path to your custom app styles-->
     <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" href="css/hamburgers.css">
 
-
+    <link rel="icon" href="img/1.ico">
 
 </head>
 <body>
@@ -48,9 +48,9 @@
             <!-- Initial Page, "data-name" contains page name -->
                         <div data-name="index" class="page">
 
-                            
+                                                   
 
-           <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="0" class="swiper-container swiper-init demo-swiper">
+           <div id="toolbarswiper" data-pagination='{"el": ".swiper-pagination"}' data-space-between="0" class="swiper-container swiper-init demo-swiper">
   <div class="swiper-pagination"></div>
   <div class="swiper-wrapper">
    
@@ -139,7 +139,6 @@
 
                     <h3>Un temporizador al estilo pomodoro ideal para tus sesiones de estudio</h3>
 
-
                     </div>
                    
             </div>
@@ -148,38 +147,88 @@
   </div>
 </div>
 
+
+
+
             </div>
         </div>
     </div>
 
 
-
-<!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        ...
-    </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-</div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-auth.js"></script> -->
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
 
 
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "kjalkdjhalskdhjf", 
+    authDomain: "fffff-mobile.firebaseapp.com",
+    databaseURL: "https://ffff-mobile.firebaseio.com",
+    projectId: "fffff-mobile",
+    storageBucket: "c2020-mobile.appspot.com",
+    messagingSenderId: "sdkjasdlkjhasdfhakjsdhlf",
+    appId: "1:921544480379:web:sdjhalksjdhflashjdf"
+  }; 
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  //  document.getElementById('#btn-facebook').addEventListener('click', ingresoFacebook,false);
+
+
+
+ function IngresoFacebook(){
+      console.log();
+      alert("asd");
+
+    if (!firebase.auth().currentUser){
+
+      var provider = new firebase.auth.FacebookProvider();
+
+      provider.addScope ('public_profile');
+
+      firebase.auth().signInWithPopup(provider).then (function(result){
+
+        var token = result.credential.accesstoken;
+        var user = result.user;
+        console.log(user);
+        
+      }).catch (function (error) {
+
+        var errorCode = error.Code
+        var errorMessage = error.message;
+        var erroremail = error.email;
+        var credential = error.credential;
+
+        if (errorCode=== 'auth/account-exists-with-different-credential'){
+          alert('Es el mismo usuario')
+        }
+      })
+
+    }else {
+      firebase.auth().signOut();
+    }
+  }
+
+  //document.getElementById('btn-google').addEventListener('click', ingresoGoogle,false);
+
+
+
+
+</script>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
     <script type="text/javascript" src="js/my-app.js"></script>
+
+   
+</script>
+
+
 </body>
 
 </html>

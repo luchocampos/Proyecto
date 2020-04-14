@@ -57,16 +57,6 @@ $$(document).on('deviceready', function() {
 
 
 
-
-var swiper = new Swiper('.swiper-container', {
-  speed: 500,
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  // ...
-});
-
     $$('.tocaBoton').on('click', fnTocaBoton);
 
 });
@@ -80,11 +70,18 @@ $$(document).on('page:init', function (e) {
 
 
 // Option 2. Using live 'page:init' event handlers for each page
-$$(document).on('page:init', '.page[data-name="about"]', function (e) {
+$$(document).on('page:init', '.page[data-name="foro"]', function (e) {
+    // Do something here when page with data-name="about" attribute loaded and initialized
+    
+    $$('#btn-facebook').on('click', IngresoFacebook);
+
+})
+$$(document).on('page:init', '.page[data-name="forologin"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
     console.log(e);
-    alert('Hello');
 })
+
+
 
 
 
@@ -115,7 +112,5 @@ function fnTocaBoton() {
 
 
 
-}
-
-
+};
 

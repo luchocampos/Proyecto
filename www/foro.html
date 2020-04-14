@@ -1,34 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-   
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *">
 
-    <!-- Required meta tags-->
-    <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <!-- Color theme for statusbar -->
-    <meta name="theme-color" content="#2196f3">
-    <!-- Your app title -->
-    <title>My App</title>
-    <!-- Path to Framework7 Library CSS -->
-    <link rel="stylesheet" href="lib/framework7/css/framework7.bundle.min.css">
-    <!-- Path to icons -->
-    <link rel="stylesheet" href="css/icons.css">
-    <!-- Path to your custom app styles-->
-    <link rel="stylesheet" href="css/app.css">
-</head>
-
-<body>
-    <div id="app">
-        <!-- Statusbar overlay -->
-        <div class="statusbar"></div>
-    
-        <!-- Your main view, should have "view-main" class -->
-        <div class="view view-main">
-            <!-- Initial Page, "data-name" contains page name -->
-            <div data-name="index" class="page">
+            <div data-name="foro" class="page">
 
                        <!-- Top Navbar -->
                 <div class="navbar">
@@ -42,7 +13,7 @@
 
                     </div>
 
-                        <div id="titulo" class="title"> <h3>FORO ONLINE</h3>
+                        <div id="titulo" class="title"> <img id="logo" src="img/logo.png">
 
                          </div>
                         </div>
@@ -72,8 +43,16 @@
   </ul>
 </div>
       </div>
-    </div>
+</div>
+
+<div class="block">
+    <p><a class="ac-1" href="#"> < Cambiar idioma > </a></p> </div>
+
+
+        <button class="col button button-large button-fill" id="btn-facebook"  > <img src="img/iconfb.png">  Iniciar sesión con Facebook</button>
+
 <div id="pageforo">
+
 <div class="block">
   <a href="/forologin/">
   <p class="row">
@@ -88,11 +67,6 @@
   </a>
 </div>
 <div>
-   <h4>  o continuar con: </h4> </div>
-<a href="#"> <img src="img/iconwsp.png"> </a>
-<a href="#"> <img src="img/icontw.jpg"> </a>
-<a href="#"> <img src="img/iconfb.png"> </a>
-<a href="#"> <img src="img/iconig.png"> </a>
 </div>
 
                     </div>
@@ -100,10 +74,3 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-</body>
-
-</html>

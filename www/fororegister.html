@@ -47,7 +47,7 @@
 
                     </div>
 
- <button class="col button button-large button-fill" > <img id="fb" src="img/iconfb.png">  Iniciar sesión con Facebook</button>
+ <button id="btn-facebook"  class="col button button-large button-fill" > <img id="fb" src="img/iconfb.png">  Iniciar sesión con Facebook</button>
 
 <div id="form" class="list no-hairlines-md">
   <ul>
@@ -57,9 +57,9 @@
       </div>
       <div class="item-inner">
 
-        <div class="item-title item-floating-label">Telefono o correo</div>
+        <div class="item-title item-floating-label">Correo electronico</div>
         <div class="item-input-wrap">
-          <input type="text" placeholder="Tu correo o Telefono">
+          <input type="text" id="email" placeholder="Tu correo o Telefono" required>
           <span class="input-clear-button"></span>
         </div>
       </div>
@@ -71,7 +71,7 @@
       <div class="item-inner">
         <div class="item-title item-floating-label">Nombre completo</div>
         <div class="item-input-wrap">
-          <input type="text" placeholder="Tu nombre completo">
+          <input type="text" id="nombre" placeholder="Tu nombre completo" required>
           <span class="input-clear-button"></span>
         </div>
       </div>
@@ -83,7 +83,7 @@
       <div class="item-inner">
         <div class="item-title item-floating-label">Tu nombre de usuario</div>
         <div class="item-input-wrap">
-          <input type="password" placeholder="Tu nombre de usuario">
+          <input type="text" id="id" placeholder="Tu nombre de usuario" required="pone">
           <span class="input-clear-button"></span>
         </div>
       </div>
@@ -95,7 +95,7 @@
       <div class="item-inner">
         <div class="item-title item-floating-label">Contraseña</div>
         <div class="item-input-wrap">
-          <input type="password" placeholder="Tu contraseña">
+          <input type="password" id="clave" placeholder="Tu contraseña" required>
           <span class="input-clear-button"></span>
         </div>
       </div>
@@ -104,7 +104,7 @@
                 </div>
  <div class="row">
                       <div class="col-33"></div>
-                      <div class="col-33"><a href="/foroinicio/" class="button button-round button-fill">Registrarte</a></div>
+                      <div class="col-33"><a id="btn-register" class="button button-round button-fill">Registrarte</a></div>
                       <div class="col-33"></div>
                     </div>
 

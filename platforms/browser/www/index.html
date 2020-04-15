@@ -155,6 +155,13 @@
     </div>
 
 
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+
+   
     <!-- The core Firebase JS SDK is always required and must be listed first -->
 <!-- <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script> -->
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
@@ -167,67 +174,18 @@
 <script>
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "kjalkdjhalskdhjf", 
-    authDomain: "fffff-mobile.firebaseapp.com",
-    databaseURL: "https://ffff-mobile.firebaseio.com",
-    projectId: "fffff-mobile",
-    storageBucket: "c2020-mobile.appspot.com",
-    messagingSenderId: "sdkjasdlkjhasdfhakjsdhlf",
-    appId: "1:921544480379:web:sdjhalksjdhflashjdf"
-  }; 
+    apiKey: "AIzaSyCR_J0nmVwaIAMvXdwD4b8vDdP5pKp8x4k",
+    authDomain: "student-47f7f.firebaseapp.com",
+    databaseURL: "https://student-47f7f.firebaseio.com",
+    projectId: "student-47f7f",
+    storageBucket: "student-47f7f.appspot.com",
+    messagingSenderId: "470666744424",
+    appId: "1:470666744424:web:89debc412b63118ff8a1dd",
+    measurementId: "G-DE8D5GZBVM"
+  };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
-  //  document.getElementById('#btn-facebook').addEventListener('click', ingresoFacebook,false);
-
-
-
- function IngresoFacebook(){
-      console.log();
-      alert("asd");
-
-    if (!firebase.auth().currentUser){
-
-      var provider = new firebase.auth.FacebookProvider();
-
-      provider.addScope ('public_profile');
-
-      firebase.auth().signInWithPopup(provider).then (function(result){
-
-        var token = result.credential.accesstoken;
-        var user = result.user;
-        console.log(user);
-        
-      }).catch (function (error) {
-
-        var errorCode = error.Code
-        var errorMessage = error.message;
-        var erroremail = error.email;
-        var credential = error.credential;
-
-        if (errorCode=== 'auth/account-exists-with-different-credential'){
-          alert('Es el mismo usuario')
-        }
-      })
-
-    }else {
-      firebase.auth().signOut();
-    }
-  }
-
-  //document.getElementById('btn-google').addEventListener('click', ingresoGoogle,false);
-
-
-
-
 </script>
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="lib/framework7/js/framework7.bundle.min.js"></script>
-    <script type="text/javascript" src="js/my-app.js"></script>
-
-   
-</script>
-
 
 </body>
 

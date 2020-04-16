@@ -47,6 +47,16 @@ width: 360px;}
  #fb{margin-top:5px;
     margin-right: 20px;
     }
-#titulo {margin-left: 0px;
+#titulo {margin-left: 40px;
         }
 
+#omitir{margin-top: 90px;
+        margin-right:250px;}
+#comenzar {margin-top: 140px;
+        margin-left:220px;}
+
+.btn-facebook{background-color: #1089F7;}
+.page{background-color: lightblue;}
+.navbar-inner {background-color: #1089F7;   }
+.bar{color: black;
+      margin-left: 10px;}

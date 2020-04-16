@@ -3,7 +3,8 @@
 <head>
 
 
-<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline';">
+
+<meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval'; script-src * 'unsafe-inline' 'unsafe-eval'; connect-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; frame-src *; style-src * 'unsafe-inline'; font-src * data: URIs ">
 
 
     <!-- Required meta tags-->
@@ -22,7 +23,7 @@
     <link rel="stylesheet" href="css/app.css">
 
     <link rel="icon" href="img/1.ico">
-
+    <script src="js/all.js"></script>
 </head>
 <body>
     <div id="app">
@@ -34,12 +35,12 @@
        
 
 
-     <!-- Toolbar -->
+     <!-- Toolbar - ->
                 <div class="toolbar toolbar-bottom">
                     <div class="toolbar-inner">
                     <!- - Toolbar links - ->
-                    <a href="/horarios/" class="link">Omitir</a>
-                    <a href="/foro/" class="link">Siguiente</a>
+                    <a href="/foro/" class="link">Omitir</a>
+                    <a href="#" id="next" class="link">Siguiente</a>
                     </div>
                 </div>   -->
         
@@ -48,26 +49,30 @@
             <!-- Initial Page, "data-name" contains page name -->
                         <div data-name="index" class="page">
 
-                                                   
+                                             
 
-           <div id="toolbarswiper" data-pagination='{"el": ".swiper-pagination"}' data-space-between="0" class="swiper-container swiper-init demo-swiper">
+           <div id="toolbarswiper" data-pagination ='{"el": ".swiper-pagination "}  ' data-space-between="100" class="swiper-container swiper-init demo-swiper">
   <div class="swiper-pagination"></div>
   <div class="swiper-wrapper">
    
 
-    <div id="xd" class="swiper-slide">
+    <div  class="swiper-slide">
      <div id="pagina1" class="page-content text-align-center">
                      <img src="img/1.png">
 
                    <div class="block"> 
                         
-                    <h2>Bienvenido/a a Student</h2> </br>
+                    <h2>Bienvenid@ a Student </h2>
+                     </br>
                     <h3>Conéctate al foro online de tu instituto o facultad y prueba las diferntes herramientas que te ayudaran en tu vida academica</h3>
+                    
+           </div>
+                
+                               <div id="omitir"><a href="/foro/"><h2>Omitir</h2></a></div>
 
 
-                    </div>
-                   
             </div>
+          
             </div>
     <div class="swiper-slide">
      <div id="pagina2" class="page-content text-align-center">
@@ -78,6 +83,7 @@
                     <h2>HORARIOS</h2></br>
                     <h3>Podés organizar tus horarios para que nunca olvides que asignatura cursar ese dia</h3>
 
+              
 
 
                     </div>
@@ -93,9 +99,8 @@
                     <h2>TAREAS</h2></br>
                 
                     <h3>Cuenta con una lista de deberes para que puedas anotar todas tus tareas</h3>
-
-
-                    </div>
+                      </div>
+  
                    
             </div>
             </div>
@@ -108,10 +113,7 @@
                     <h2>NOTAS</h2></br>
                 
                     <h3>Te permitiriá tomar notas durante la clase, ademas podras grabar y tomar fotos</h3>
-
-
-                    </div>
-                   
+                   </div>
             </div>
             </div>
     <div class="swiper-slide">
@@ -124,8 +126,7 @@
                     
                     <h3>Tendrás la posibilidad de guardar aqui todos tus apuntes y libros de manera digital</h3>
 
-
-                    </div>
+                      </div>
                    
             </div>
             </div>
@@ -138,8 +139,8 @@
                     <h2>TEMPORIZADOR</h2></br>
 
                     <h3>Un temporizador al estilo pomodoro ideal para tus sesiones de estudio</h3>
+                   <div id="comenzar"> <a href="/foro/"><h2>Comenzar</h2></a> </div>
 
-                    </div>
                    
             </div>
             </div>

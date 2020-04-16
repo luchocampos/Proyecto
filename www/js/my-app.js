@@ -59,7 +59,13 @@ var email;
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 
+      
+      $$('#login').on('click', fnLogin);
+      
+      $$('.btn-facebook').on('click', fnFacebook);
+
       $$('#btn-register').on('click', fnRegister);
+
 
 
 });
@@ -68,13 +74,18 @@ $$(document).on('deviceready', function() {
 $$(document).on('page:init', function (e) {
     // Do something here when page loaded and initialized
         fnMostrarError(e);
+      $$('#login').on('click', fnLogin);
+      $$('.btn-facebook').on('click', fnFacebook);
+      $$('#btn-register').on('click', fnRegister);
+             $$('.next').on('click', fnNext);
+
 
 })
 
 
 
 // Option 2. Using live 'page:init' event handlers for each page
-$$(document).on('page:init', '.page[data-name="index"]', function (e) {
+$$(document).on('page:init', '.page[data-name="foro"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
         fnMostrarError(e);
 
@@ -83,14 +94,28 @@ $$(document).on('page:init', '.page[data-name="index"]', function (e) {
 $$(document).on('page:init', '.page[data-name="fororegister"]', function (e) {
     // Do something here when page with data-name="about" attribute loaded and initialized
 
-      $$('#btn-register').on('click', fnRegister);
+
+
 })
 
 
 
 
 
+
+
 /** FUNCIONES PROPIAS **/
+var swiper = new Swiper(".swiper-container",{
+spaceBetween:0,
+    pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+  },
+
+}
+);
+
+
 
 
 function fnRegister() {
@@ -128,5 +153,83 @@ function fnMostrarError(txt) {
       console.log("ERROR: " + txt);
   }
 }
+
+
+function fnFacebook(){
+  
+   if (!firebase.auth().currentUser){
+
+      const provider = new firebase.auth.FacebookAuthProvider();
+
+      provider.addScope ('public_profile');
+
+      firebase.auth().signInWithPopup(provider).then (function(result){
+
+        var token = result.credential.accesstoken;
+        var user = result.user;
+        console.log(user);
+        
+      }).catch (function (error) {
+
+        var errorCode = error.Code
+        var errorMessage = error.message;
+        var erroremail = error.email;
+        var credential = error.credential;
+
+        if (errorCode=== 'auth/account-exists-with-different-credential'){
+          alert('Es el mismo usuario')
+        }
+      })
+
+    }else {
+      firebase.auth().signOut();
+    mainView.router.navigate("/foroinicio/");
+
+    }
+  }
+   // document.getElementById('.btn-facebook').addEventListener('click', fnFacebook,false);
+
+
+
+function fnLogin() {
+
+    email = $$('#email').val();
+    var clave = $$('#clave').val();
+       
+//Se declara la variable huboError (bandera)
+    var huboError = 0;
+        
+    firebase.auth().signInWithEmailAndPassword(email, clave)
+        .catch(function(error){
+//Si hubo algun error, ponemos un valor referenciable en la variable huboError
+            huboError = 1;
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            fnMostrarError(errorMessage);
+            fnMostrarError(errorCode);
+        })
+        .then(function(){   
+//En caso de que esté correcto el inicio de sesión y no haya errores, se dirige a la siguiente página
+            if(huboError == 0){
+
+                
+            mainView.router.navigate("/foroinicio/");
+
+                      } else {
+                          // doc.data() will be undefined in this case
+                          //console.log("No such document!");
+                      }
+                }).catch(function(error) {
+                    console.log("Error getting document:", error);
+                });   }
+
+function fnNext(){
+swiper.slideNext()
+
+
+};
+   
+
+
 
 

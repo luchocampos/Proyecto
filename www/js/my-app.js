@@ -34,8 +34,8 @@ var app = new Framework7({
       },
 
       {
-        path: '/foroinicio/',
-        url: 'foroinicio.html',
+        path: '/fororegister2/',
+        url: 'fororegister2.html',
       },
 
          {
@@ -66,6 +66,8 @@ $$(document).on('deviceready', function() {
 
       $$('#btn-register').on('click', fnRegister);
 
+       $$('.btn-google').on('click', fnGoogle);
+
 
 
 });
@@ -77,7 +79,8 @@ $$(document).on('page:init', function (e) {
       $$('#login').on('click', fnLogin);
       $$('.btn-facebook').on('click', fnFacebook);
       $$('#btn-register').on('click', fnRegister);
-             $$('.next').on('click', fnNext);
+      $$('.next').on('click', fnNext);
+      $$('.btn-google').on('click', fnGoogle);
 
 
 })
@@ -122,7 +125,8 @@ function fnRegister() {
 
     var elMail = $$('#email').val(); // es un input... uso val!
     var laClave = $$('#clave').val(); // es un input... uso val!
-
+    var elNombre = $$('#nombre').val();
+    var elUsuario = $$('#id').val();
     email = elMail;
 
     var huboError = 0;
@@ -141,7 +145,7 @@ function fnRegister() {
           if(huboError == 0){
             // alert('OK');
             // lo seteo en el panel.... contenedor lblEmail
-            mainView.router.navigate("/foroinicio/");
+            mainView.router.navigate("/fororegister2/");
           }
       });
 }
@@ -153,6 +157,40 @@ function fnMostrarError(txt) {
       console.log("ERROR: " + txt);
   }
 }
+
+ function fnGoogle(){
+    if (!firebase.auth().currentUser){
+
+      const provider = new firebase.auth.GoogleAuthProvider();
+
+      provider.addScope ('https://www.googleapis.com/auth/cloud-platform');
+
+      firebase.auth().signInWithPopup(provider).then (function(result){
+
+        var token = result.credential.accesstoken;
+        var user = result.user;
+        console.log(user);
+
+      }).catch (function (error) {
+
+        var errorCode = error.Code
+        var errorMessage = error.message;
+        var erroremail = error.email;
+        var credential = error.credential;
+
+        if (errorCode=== 'auth/account-exists-with-different-credential'){
+          alert('Es el mismo usuario')
+        }
+      })
+
+    }else {
+      alert("ok");
+      firebase.auth().signOut();
+          mainView.router.navigate("/fororegister2/");
+
+    }
+  }
+  
 
 
 function fnFacebook(){
@@ -183,11 +221,10 @@ function fnFacebook(){
 
     }else {
       firebase.auth().signOut();
-    mainView.router.navigate("/foroinicio/");
+    mainView.router.navigate("/fororegister2/");
 
     }
   }
-   // document.getElementById('.btn-facebook').addEventListener('click', fnFacebook,false);
 
 
 
@@ -213,7 +250,7 @@ function fnLogin() {
             if(huboError == 0){
 
                 
-            mainView.router.navigate("/foroinicio/");
+            mainView.router.navigate("/fororegister2/");
 
                       } else {
                           // doc.data() will be undefined in this case
@@ -228,7 +265,7 @@ swiper.slideNext()
 
 
 };
-   
+  
 
 
 

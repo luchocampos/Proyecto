@@ -42,8 +42,8 @@ width: 360px;}
       margin-top:8px; }
 #pageforo{margin-top: 30%}
 
-#form {margin-right: 20%}
-
+ #form{margin-right: 20%;
+}
  #fb{margin-top:5px;
     margin-right: 20px;
     }
@@ -54,9 +54,17 @@ width: 360px;}
         margin-right:250px;}
 #comenzar {margin-top: 140px;
         margin-left:220px;}
+.btn-google{ color: blue; 
+  background-color: white;}
 
 .btn-facebook{background-color: #1089F7;}
 .page{background-color: lightblue;}
 .navbar-inner {background-color: #1089F7;   }
 .bar{color: black;
       margin-left: 10px;}
+.asd{background-color: lightblue;}
+.colorp{background-color: #7BE5EE;}
+.colorpp{background-color: lightblue;}
+#hr{text-align: center;}
+.volver {margin-right:300px}
+#pie{margin-bottom: 30px;}

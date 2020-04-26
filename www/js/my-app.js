@@ -50,6 +50,11 @@ var app = new Framework7({
         path: '/forogeneral/',
         url: 'forogeneral.html',
       },
+         {
+        path: '/perfil/',
+        url: 'perfil.html',
+      },
+
 
 
 
@@ -63,10 +68,23 @@ var app = new Framework7({
 var mainView = app.views.create('.view-main');
 
 var email;
-
+var nombre;
+var db, refUsuarios, refContinuar;
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+
+db = firebase.firestore();
+refUsuarios=db.collection("USUARIO");
+refContinuar=db.collection("DATOS");
+
+
+
+
+
+
+
+   $$('#continuar').on('click', fnContinuar);
 
       
       $$('#login').on('click', fnLogin);
@@ -85,6 +103,7 @@ $$(document).on('deviceready', function() {
 $$(document).on('page:init', function (e) {
     // Do something here when page loaded and initialized
         fnMostrarError(e);
+   $$('#continuar').on('click', fnContinuar);
       $$('#login').on('click', fnLogin);
       $$('.btn-facebook').on('click', fnFacebook);
       $$('#btn-register').on('click', fnRegister);
@@ -117,6 +136,9 @@ $$(document).on('page:init', '.page[data-name="fororegister"]', function (e) {
 
 
 /** FUNCIONES PROPIAS **/
+
+
+
 var swiper = new Swiper(".swiper-container",{
 spaceBetween:0,
     pagination: {
@@ -135,7 +157,15 @@ function fnRegister() {
     var laClave = $$('#clave').val(); // es un input... uso val!
     var elNombre = $$('#nombre').val();
     var elUsuario = $$('#id').val();
-    email = elMail;
+     email = elMail;
+    nombre = elNombre;
+     var data = {
+      nombre: elNombre,
+      usuario: elUsuario,
+      clave: laClave,
+     } 
+     refUsuarios.doc(nombre).set(data);
+
 
     var huboError = 0;
 
@@ -156,6 +186,8 @@ function fnRegister() {
             mainView.router.navigate("/fororegister2/");
           }
       });
+
+
 }
 
 
@@ -274,7 +306,24 @@ swiper.slideNext()
 
 };
   
+function fnContinuar(){
+   var provincia = $$('#provincia').val();
+ var localidad = $$('#localidad').val();
+ var institucion = $$('#institucion').val();
+ var carrera = $$('#carrera').val();
+
+     var data = {
+      
+      provincia: provincia,
+      localidad: localidad,
+      institucion: institucion,
+      carrera : carrera,
 
 
+     } 
+
+     refContinuar.doc(nombre).set(data);
+
+};
 
 

@@ -63,14 +63,30 @@ width: 360px;}
 .bar{color: black;
       margin-left: 10px;}
 .asd{background-color: lightblue;}
-.colorp{background-color: #7BE5EE;}
+.colorp{background-color: #67999E;}
 .colorpp{background-color: lightblue;}
 #hr{text-align: center;}
 .volver {margin-right:300px}
 #pie{margin-bottom: 30px;}
-.page1{background-color: white
+.page1{background-color: #67999E
   }
-.card{ width: 95%;
+.carrd{ width: 95%;
       height: 60%;  }
 
 .incard{width: 40px;}
+
+.alineamiento{text-align: center;}
+
+
+.editor{
+height: 300px;
+width: 360px;
+margin-left:0px;
+margin-top:0px;
+
+}
+
+
+
+
+
